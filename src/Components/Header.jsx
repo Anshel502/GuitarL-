@@ -12,7 +12,7 @@ export default function Header({ cart, total, increaseQuantity, decreaseQuantity
             <a href="index.html">
               <img
                 className="img-fluid"
-                src="./public/img/logo.svg"
+                src="img/logo.svg"
                 alt="imagen logo"
               />
             </a>
@@ -22,7 +22,7 @@ export default function Header({ cart, total, increaseQuantity, decreaseQuantity
             <div className="carrito">
               <img
                 className="img-fluid"
-                src="./public/img/carrito.png"
+                src="img/carrito.png"
                 alt="imagen carrito"
               />
               <div id="carrito" className="bg-white p-3">
@@ -39,14 +39,14 @@ export default function Header({ cart, total, increaseQuantity, decreaseQuantity
                           <th>Cantidad</th>
                           <th></th>
                         </tr>
-                      </thead>
+                      </thead>  
                       <tbody>
                         {cart.map((guitar) => (
                           <tr key={guitar.id}>
                             <td>
                               <img
                                 className="img-fluid"
-                                src={`./public/img/${guitar.image}.jpg`}
+                                src={`img/${guitar.image}.jpg`}
                                 alt={`imagen ${guitar.name}`}
                               />
                             </td>

@@ -5,7 +5,7 @@ import Guitar from "./Components/Guitar";
 
 function App() {
   const [data, setData] = useState(db);
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(initialCart());
 
   const cartTotal = useMemo(() => cart.reduce((acc, guitar) => acc + (guitar.price * guitar.quantity), 0), [cart]);
 
@@ -50,7 +50,10 @@ function App() {
   function clearCart() {
     setCart([]);
   }
-
+function initialCart() {
+  const storedCart = localStorage.getItem("cart");
+  return storedCart ? JSON.parse(storedCart) : [];
+}
   return (
     <>
       <Header
