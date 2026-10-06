@@ -3,7 +3,7 @@ import React from 'react'
 export default function Guitar({guitar, handlerClick}) {
 
 
-const{id,name,image,description,price} = guitar;
+const{name,image,description,price} = guitar;
 
 
 

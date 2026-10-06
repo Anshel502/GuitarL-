@@ -1,8 +1,12 @@
-import { useMemo } from "react";
-
-export default function Header({ cart, total, increaseQuantity, decreaseQuantity, removeFromCart, clearCart }) {
-
-  const isEmpty = useMemo(() => cart.length === 0, [cart]);
+export default function Header({ 
+  cart, 
+  isEmpty, 
+  cartTotal, 
+  increaseQuantity, 
+  decreaseQuantity, 
+  removeFromCart, 
+  clearCart 
+}) {
 
   return (
     <header className="py-5 header">
@@ -26,6 +30,7 @@ export default function Header({ cart, total, increaseQuantity, decreaseQuantity
                 alt="imagen carrito"
               />
               <div id="carrito" className="bg-white p-3">
+                {/* Usamos el isEmpty que viene de los props */}
                 {isEmpty ? (
                   <p className="text-center">El carrito está vacío</p>
                 ) : (
@@ -84,7 +89,8 @@ export default function Header({ cart, total, increaseQuantity, decreaseQuantity
                     </table>
 
                     <p className="text-end">
-                      Total pagar: <span className="fw-bold">${total}</span>
+                      {/* Usamos el cartTotal que viene de los props */}
+                      Total pagar: <span className="fw-bold">${cartTotal}</span>
                     </p>
                     <button
                       className="btn btn-dark w-100 mt-3 p-2"
